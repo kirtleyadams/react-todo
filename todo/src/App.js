@@ -1,6 +1,8 @@
 import  ToDoList  from './ToDoList';
-import { ToDo } from './ToDo';
+import  ToDo from './ToDo';
 import React from 'react';
+import SubmitForm from './SubmitForm';
+import { Component} from 'react'
 
 class App extends React.Component {
   state = {
@@ -13,10 +15,15 @@ class App extends React.Component {
     this.setState({list: newArray });
   }
 
+  addItem = (item) => {
+    this.setState ({list: [...this.state.list, item]});
+  }
+
   render () {
     return (
       <div>
-        <ToDoList list={this.state.list} remove={this.handleDelete} />
+        <ToDoList list={this.state.list} remove={this.handleDelete} addItem={this.addItem} />
+        <SubmitForm onFormSubmit ={this.addItem}/>
       </div>
     );
   }
