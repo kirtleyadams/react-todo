@@ -3,6 +3,8 @@ import  ToDo from './ToDo';
 import React from 'react';
 import SubmitForm from './SubmitForm';
 import { Component} from 'react'
+import 'app.css' from './app.css';
+
 
 class App extends React.Component {
   state = {
